@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+   <bean class="com.nokia.dempsy.config.ApplicationDefinition">
+      <constructor-arg value="DemoExtended" />
+      <property name="clusterDefinitions">
+         <list>
+            <bean class="com.nokia.dempsy.config.ClusterDefinition">
+               <constructor-arg value="WordCountAdapter" />
+               <property name="adaptor">
+                  <bean class="com.nokia.dempsy.example.wordcount.adaptor.WordCountAdaptor">
+                     <property name="wordFactory">
+                        <bean class="com.nokia.dempsy.example.wordcount.factory.WordListFileReaderWordFactory" />
+                     </property>
+                  </bean>
+               </property>
+               <property name="destinations">
+                  <bean class="com.nokia.dempsy.config.ClusterId">
+                     <constructor-arg index="0" value="DemoExtended" />
+                     <constructor-arg index="1" value="WordCount" />
+                  </bean>
+               </property>
+            </bean>
+            <bean class="com.nokia.dempsy.config.ClusterDefinition">
+               <constructor-arg value="WordCount" />
+               <property name="messageProcessorPrototype">
+                  <bean class="com.nokia.dempsy.example.simplewordcount.mp.WordCountMP" />
+               </property>
+            </bean>
+            <bean class="com.nokia.dempsy.config.ClusterDefinition">
+               <constructor-arg value="WordRank" />
+               <property name="messageProcessorPrototype">
+                  <bean class="com.nokia.dempsy.example.simplewordcount.mp.WordRankMP" />
+               </property>
+               <property name="routingStrategy">
+                  <bean class="com.nokia.dempsy.router.DefaultRoutingStrategy">
+                     <constructor-arg index="0" value="10" />
+                     <constructor-arg index="1" value="1" />
+                  </bean>
+               </property>
+            </bean>
+            <bean class="com.nokia.dempsy.config.ClusterDefinition">
+               <constructor-arg value="LetterCount" />
+               <property name="messageProcessorPrototype">
+                  <bean class="com.nokia.dempsy.example.wordcount.mp.StartLetterCountMP" />
+               </property>
+            </bean>
+            <bean class="com.nokia.dempsy.config.ClusterDefinition">
+               <constructor-arg value="LetterRank" />
+               <property name="messageProcessorPrototype">
+                  <bean class="com.nokia.dempsy.example.wordcount.mp.StartLetterRankMP" />
+               </property>
+               <property name="routingStrategy">
+                  <bean class="com.nokia.dempsy.router.DefaultRoutingStrategy">
+                     <constructor-arg index="0" value="10" />
+                     <constructor-arg index="1" value="1" />
+                  </bean>
+               </property>
+               <property name="outputSchedule">
+                  <bean class="com.nokia.dempsy.config.OutputSchedule">
+                     <constructor-arg index="0" type="long" value="15" />
+                     <constructor-arg index="1" type="java.lang.String" value="SECONDS" />
+                  </bean>
+               </property>
+            </bean>
+         </list>
+      </property>
+   </bean>
+
+</beans>
