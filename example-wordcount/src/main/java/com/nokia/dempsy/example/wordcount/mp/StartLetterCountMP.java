@@ -14,21 +14,6 @@
  * limitations under the License.
  */
 
-package com.nokia.dempsy.example.simplewordcount.mp;
-
-import java.util.Comparator;
-import java.util.TreeSet;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
-
-import org.apache.log4j.Logger;
-
-import com.nokia.dempsy.annotations.MessageHandler;
-import com.nokia.dempsy.annotations.MessageProcessor;
-import com.nokia.dempsy.example.simplewordcount.message.Word;
-import com.nokia.dempsy.example.simplewordcount.message.WordCount;
-
-
 package com.nokia.dempsy.example.wordcount.mp;
 
 import org.apache.log4j.Logger;
