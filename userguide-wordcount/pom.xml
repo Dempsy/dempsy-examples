@@ -16,12 +16,12 @@
    <dependencies>
       <!-- Project -->
       <dependency>
-         <groupId>com.nokia.dempsy</groupId>
+         <groupId>net.dempsy</groupId>
          <artifactId>lib-dempsyapi</artifactId>
          <scope>provided</scope>
       </dependency>
       <dependency>
-         <groupId>com.nokia.dempsy</groupId>
+         <groupId>net.dempsy</groupId>
          <artifactId>lib-dempsyspring</artifactId>
          <scope>provided</scope>
       </dependency>
