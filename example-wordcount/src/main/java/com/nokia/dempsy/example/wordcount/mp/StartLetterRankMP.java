@@ -25,7 +25,6 @@ import org.apache.log4j.Logger;
 import com.nokia.dempsy.annotations.MessageHandler;
 import com.nokia.dempsy.annotations.MessageProcessor;
 import com.nokia.dempsy.annotations.Output;
-import com.nokia.dempsy.config.OutputSchedule;
 import com.nokia.dempsy.example.simplewordcount.message.Letter;
 import com.nokia.dempsy.example.wordcount.messages.LetterCount;
 
