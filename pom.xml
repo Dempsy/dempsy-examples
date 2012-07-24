@@ -13,13 +13,12 @@
       <spring.version>3.0.6.RELEASE</spring.version>
       <guice.version>3.0</guice.version>
       <dempsy.version>0.7</dempsy.version>
-      <app-installDir>/usr/share/dempsy-apps</app-installDir>
    </properties>
 
    <modules>
+      <module>example-simplewordcount</module>
       <module>userguide-wordcount</module>
       <module>example-wordcount</module>
-      <module>example-simplewordcount</module>
       <module>example-aws</module>
    </modules>
 
@@ -56,13 +55,6 @@
             <artifactId>example-simplewordcount</artifactId>
             <version>${project.version}</version>
          </dependency>
-
-         <dependency>
-            <groupId>net.dempsy</groupId>
-            <artifactId>lib-dempsyapi</artifactId>
-            <version>${dempsy.version}</version>
-         </dependency>
-
          <dependency>
             <groupId>net.dempsy</groupId>
             <artifactId>lib-dempsyspring</artifactId>
@@ -134,11 +126,6 @@
                <artifactId>maven-clean-plugin</artifactId>
                <version>2.4.1</version>
             </plugin>
-            <plugin>
-               <groupId>org.codehaus.mojo</groupId>
-               <artifactId>rpm-maven-plugin</artifactId>
-               <version>2.1-alpha-1</version>
-            </plugin>
          </plugins>
       </pluginManagement>
       <plugins>
@@ -149,23 +136,6 @@
                <source>1.6</source>
                <target>1.6</target>
                <debug>true</debug>
-            </configuration>
-         </plugin>
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>rpm-maven-plugin</artifactId>
-            <extensions>true</extensions>
-            <configuration>
-               <copyright>2010, NoBody</copyright>
-               <group>Development</group>
-               <description>Maven Recipe: RPM Package.</description>
-               <mappings>
-                  <mapping>
-                     <directory>${app-installDir}-${project.artifactId}-${project.version}/</directory>
-                     <dependency />
-                     <artifact />
-                  </mapping>
-               </mappings>
             </configuration>
          </plugin>
       </plugins>

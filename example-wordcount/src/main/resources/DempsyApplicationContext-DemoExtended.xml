@@ -61,10 +61,14 @@
                      <constructor-arg index="1" value="1" />
                   </bean>
                </property>
-               <property name="outputSchedule">
-                  <bean class="com.nokia.dempsy.config.OutputSchedule">
+               <property name="outputExecuter">
+                  <bean class="com.nokia.dempsy.output.RelativeOutputSchedule">
                      <constructor-arg index="0" type="long" value="15" />
-                     <constructor-arg index="1" type="java.lang.String" value="SECONDS" />
+                     <constructor-arg index="1" type="java.util.concurrent.TimeUnit">
+                     	<bean class="java.util.concurrent.TimeUnit" factory-method="valueOf">
+                     		<constructor-arg index="0" value="SECONDS"/>
+                     	</bean>
+                     </constructor-arg>
                   </bean>
                </property>
             </bean>
