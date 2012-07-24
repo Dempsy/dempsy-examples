@@ -17,11 +17,6 @@
       <!-- Project -->
       <dependency>
          <groupId>net.dempsy</groupId>
-         <artifactId>lib-dempsyapi</artifactId>
-         <scope>provided</scope>
-      </dependency>
-      <dependency>
-         <groupId>net.dempsy</groupId>
          <artifactId>lib-dempsyspring</artifactId>
          <scope>provided</scope>
       </dependency>
@@ -29,39 +24,6 @@
    
    <build>
       <plugins>
-         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>rpm-maven-plugin</artifactId>
-            <extensions>true</extensions>
-            <executions>
-               <execution>
-                  <goals>
-                     <goal>rpm</goal>
-                  </goals>
-               </execution>
-            </executions>
-
-            <configuration>
-               <copyright>2010, NoBody</copyright>
-               <group>Development</group>
-               <description>Maven Recipe: RPM Package.</description>
-                
-               <version>1.00</version>   
-               <release>1</release>   
-
-               <postinstallScriptlet>
-                   <script>ln -s ${installDir}/dempsy-${project.version} /rel-code/tcroot/apps/userguide-wordcount</script>
-               </postinstallScriptlet>
-
-               <mappings>
-                  <mapping>
-                     <directory>${installDir}/dempsy-${project.version}/</directory>
-                     <dependency />
-                     <artifact />
-                  </mapping>
-	       </mappings>
-            </configuration>
-            </plugin>
       </plugins>
     </build>
 </project>
