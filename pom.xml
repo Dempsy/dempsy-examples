@@ -12,7 +12,7 @@
    <properties>
       <spring.version>3.0.6.RELEASE</spring.version>
       <guice.version>3.0</guice.version>
-      <dempsy.version>0.7</dempsy.version>
+      <dempsy.version>0.7.7</dempsy.version>
    </properties>
 
    <modules>
