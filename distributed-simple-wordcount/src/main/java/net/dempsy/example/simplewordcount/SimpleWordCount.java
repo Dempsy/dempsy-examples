@@ -37,7 +37,7 @@ public class SimpleWordCount {
                     )
                     // this will basically disable monitoring for the example
                     .nodeStatsCollector(new DummyNodeStatsCollector())
-                    // use a blocking queue as the transport mechanism since this is all running in the same process
+                    // use a Java NIO the transport mechanism
                     .receiver(new NioReceiver<Object>(new JavaSerializer()))
                     .build()
 

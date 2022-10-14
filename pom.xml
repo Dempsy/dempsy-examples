@@ -11,8 +11,8 @@
   <packaging>pom</packaging>
 
   <properties>
-    <dempsy.version>0.17-SNAPSHOT</dempsy.version>
-    <dempsy-commons.version>2.4.1-SNAPSHOT</dempsy-commons.version>
+    <dempsy.version>0.16.0</dempsy.version>
+    <dempsy-commons.version>2.4.0</dempsy-commons.version>
     <slf4j.version>1.7.30</slf4j.version>
   </properties>
 
