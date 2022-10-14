@@ -18,6 +18,7 @@
 
   <modules>
     <module>simple-wordcount</module>
+    <module>distributed-simple-wordcount</module>
   </modules>
 
    <!-- Put in all of the dependencies here WITHOUT VERSIONS.
