@@ -48,6 +48,10 @@ public class WordAdaptor implements Adaptor {
     private static final String[] wordSource = {"it","was","the","best","of","times","it","was","the","worst","of","times"};
     private int wordSourceIndex = 0;
 
+    public boolean haveSentAllWords() {
+        return wordSourceIndex >= wordSource.length;
+    }
+
     private String getNextWordFromSoucre() {
         if(wordSourceIndex >= wordSource.length)
             return null;
